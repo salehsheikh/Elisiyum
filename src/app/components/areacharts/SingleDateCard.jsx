@@ -18,8 +18,15 @@ const SingleDateCard = ({
   categories,
 }) => {
   return (
-    <div className="text-white w-full 2xl:w-[367px] 2xl:min-w-[367px]">
-      <div className={`rounded-[20px] border relative shadow-xl overflow-hidden`} style={{ backgroundColor: bg, borderColor }}>
+    <div className="text-white w-full h-full">
+    <div 
+      className={`rounded-[20px] border relative shadow-xl overflow-hidden h-full`}
+      style={{ 
+        backgroundColor: bg, 
+        borderColor,
+        boxSizing: 'border-box'
+      }}
+    >
         {/* Header Section */}
         <div className="p-3 pb-2">
           <div className="flex justify-between items-center mb-4">

@@ -75,8 +75,7 @@ export  function TopIssuance({title,issuer,date,amount}) {
 
     ];
     return (
-        <div className="max-w-4xl w-full overflow-hidden mx-auto  p-5.5  h-92.5  rounded-[37px]  bg-[#1D212780]/50 backdrop-blur-[32px]">
-              <p className="w-[4px] h-[112px] flex-shrink-0 rounded-[2.5px] bg-[#989898] right-0 top-1/3 absolute" />
+        <div className="max-w-4xl w-full mx-auto overflow-y-auto p-5.5  h-92.5  rounded-[37px]  bg-[#1D212780]/50 backdrop-blur-[32px]">
 
  {/* First Row - Header */}
  <div className="flex justify-between items-center mb-5">

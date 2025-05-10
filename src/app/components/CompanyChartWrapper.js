@@ -7,9 +7,9 @@ const CompanyChartWrapper = () => {
     <>
     <p className="text-[20px] font-medium text-white px-4 mt-3">Company Activity</p>
 
-    <div className="flex flex-col md:flex-row gap-6 w-full p-4">
+    <div className="flex flex-col md:flex-row gap-[18px] w-[100%] p-4">
       {/* Income Line Chart - Takes 2/3 of the space */}
-      <div className="flex-[2]">
+      <div className="flex-[1.5]">
         <IncomeLineChart />
       </div>
       

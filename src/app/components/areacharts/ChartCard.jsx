@@ -21,8 +21,8 @@ const ChartCard = ({
   categories,
 }) => {
   return (
-    <div className="text-white w-full md:w-[230px] xl:w-full ">
-      <div className={`rounded-[20px] border relative shadow-xl overflow-hidden`} style={{ backgroundColor: bg, borderColor }}>
+    <div className="text-white w-[100%] ">
+      <div className={`rounded-[20px] border-[1.97px] relative shadow-xl overflow-hidden`} style={{ backgroundColor: bg, borderColor }}>
         <div className={`shadow-xl ${shadowColor}`}>
           <div className="flex items-center justify-between px-3 pt-3">
             <div className="flex items-center gap-2">

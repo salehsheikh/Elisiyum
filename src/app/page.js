@@ -4,7 +4,7 @@ import MainWrapper from './(mainpages)/graphpage/MainWrapper';
 
 const Home = () => {
   return (
-    <div>
+    <div className='mx-auto'>
       <MainWrapper/>
     </div>
   )

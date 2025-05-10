@@ -14,11 +14,11 @@ const categories = [
 const DateTimeWrapper = () => {
   return (
 <>
-<div className=" px-4 w-full py-8 ">
+<div className=" px-4 w-[100%] py-8 ">
     <p className="text-[20px] font-medium text-white px-auto">Upcoming Issuances</p>
     <div className="  flex  justify-start items-start  py-4 ">
      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-[100%]">
        
 
       <SingleDateCard
@@ -37,7 +37,7 @@ const DateTimeWrapper = () => {
   months="6 months"
   issuanceDate="Nov 15th"
   chartLabel="A1"
-  securedText="13% Secured"
+  securedText="13% unSecured"
   series={[{ name: "Revenue", data: [28, 34, 30, 40, 38, 45, 50] }]}
   categories={categories}
 />
@@ -46,7 +46,7 @@ const DateTimeWrapper = () => {
   months="6 months"
   issuanceDate="Nov 15th"
   chartLabel="B3"
-  securedText="13% Secured"
+  securedText="13% Unsecured"
   series={[{ name: "Revenue", data: [28, 34, 30, 40, 38, 45, 50] }]}
   categories={categories}
 />

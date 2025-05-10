@@ -72,7 +72,7 @@ const RangeWrapper = () => {
   ];
 
   return (
-    <div className="bg-[#1D2127]/50 p-6 rounded-[35px] space-y-6 max-w-md w-full mx-auto">
+    <div className="bg-[#1D2127]/50 p-6 rounded-[35px] space-y-6  w-[100%] mx-auto">
       <h3 className="text-white text-lg font-bold">Company Tasks</h3>
       
       <div className="space-y-8">

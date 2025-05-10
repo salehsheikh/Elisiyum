@@ -4,7 +4,7 @@ import { useState } from 'react'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const IncomeLineChart = () => {
-    const [activeTab, setActiveTab] = useState('week')
+    const [activeTab, setActiveTab] = useState('year')
   const chartOptions = {
     chart: {
       type: 'line',

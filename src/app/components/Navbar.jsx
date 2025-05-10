@@ -1,33 +1,61 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Navbar = () => {
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
   return (
-    
-    <nav className="w-full border-x border-[#006EFF]  mt-5 mx-auto max-w-[997px] h-[58px]  relative rounded-[24px] 
-      bg-[url('/assets/images/nav.svg')] bg-no-repeat bg-[center_top] 
-      backdrop-blur-[32px] overflow-hidden">
+    <nav className="w-full border-x border-[#006EFF] mt-5 mx-auto max-w-[997px] h-[58px] relative rounded-[24px] 
+      bg-[url('/assets/images/nav.svg')] bg-no-repeat bg-[center_top] backdrop-blur-[32px] overflow-hidden">
 
-      <div className="flex items-center justify-between h-full px-6 ">
-        {/* Left Section - Title */}
-        <h1 className="text-white text-xl font-semibold">Investor Dashboard</h1>
+<div className="flex items-center justify-between h-full px-4 md:px-6">
+        {/* Left Section - Title - Hidden on mobile when search is open */}
+        <h1 className={`text-white text-lg md:text-xl font-semibold truncate ${isSearchVisible ? 'hidden md:block' : 'block'}`}>
+          Investor Dashboard
+        </h1>
 
-      
+        {/* Mobile Search Input - Visible only when toggled */}
+        {isSearchVisible && (
+          <div className="md:hidden absolute inset-0 bg-[#11151B] flex items-center px-4">
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full pl-8 pr-3 py-1.5 bg-black rounded-[18px] 
+                text-white placeholder-white text-[10px] focus:outline-none 
+                focus:ring-2 focus:ring-blue-500 backdrop-blur-sm"
+              />
+              <button 
+                className="absolute right-3 top-0 w-4 h-4 text-white"
+                onClick={() => setIsSearchVisible(false)}
+              >
+                ✕
+              </button>
+              <svg
+                className="absolute left-2 top-2 h-4 w-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+          </div>
+        )}
 
         {/* Right Section - Icons & Profile */}
-        <div className="flex items-center gap-6">
-
-        <div className="flex items-center  max-w-[200px] ">
-          <div className="relative w-full">
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full pl-10 pr-4 py-2 bg-black rounded-[18px] 
-                text-white placeholder-white text-[10px] focus:outline-none focus:ring-2 
-                focus:ring-blue-500 backdrop-blur-sm"
-            />
+        <div className={`flex items-center gap-3 md:gap-6 ${isSearchVisible ? 'hidden md:flex' : 'flex'}`}>
+          {/* Mobile Search Icon */}
+          <button 
+            className="md:hidden p-2 text-white"
+            onClick={() => setIsSearchVisible(true)}
+          >
             <svg
-              className="absolute left-3 top-2 h-[17px] w-[17px] text-white"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -39,13 +67,39 @@ const Navbar = () => {
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
+          </button>
+
+          {/* Desktop Search Bar */}
+          <div className="hidden md:flex items-center max-w-[160px] lg:max-w-[200px]">
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full pl-8 pr-3 py-1.5 bg-black rounded-[18px] 
+                  text-white placeholder-white text-[10px]  focus:outline-none 
+                  focus:ring-2 focus:ring-blue-500 backdrop-blur-sm"
+              />
+              <svg
+                className="absolute left-2 top-2 h-4 w-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
+
           {/* Notification Icon */}
           <div className="relative">
-            <button className="text-white p-2 hover:bg-white/10 rounded-full">
+            <button className="text-white p-1.5 md:p-2 hover:bg-white/10 rounded-full">
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5 md:w-6 md:h-6"
                 fill="#ffffff"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -58,26 +112,29 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            <div className="absolute top-2 right-2 z-10 w-2 h-2 bg-red-500 rounded-full"></div>
+            <div className="absolute top-1 right-1 md:top-2 md:right-2 z-10 w-2 h-2 bg-red-500 rounded-full"></div>
           </div>
 
-          {/* Divider */}
-          <div className="h-6 w-px bg-[#B6B6B6]"></div>
+          {/* Divider - Hidden on mobile */}
+          <div className="hidden md:block h-6 w-px bg-[#B6B6B6]"></div>
 
           {/* Profile Section */}
-          <div className="flex items-center gap-3">
-          <Image 
-    src="/assets/images/avatar.svg" 
-    alt="User avatar"
-    width={25}
-    height={25}
-    className="rounded-full object-cover "
-  />
-            <span className="text-white font-medium">Elysium Motor</span>
+          <div className="flex items-center gap-2 md:gap-3">
+            <Image 
+              src="/assets/images/avatar.svg" 
+              alt="User avatar"
+              width={25}
+              height={25}
+              className="rounded-full object-cover w-6 h-6 md:w-8 md:h-8"
+            />
+            <span className="hidden md:block text-white text-sm md:text-base font-medium">
+              Elysium Motor
+            </span>
           </div>
-          <div className='flex justify-center items-center px-[5px] bg-[#FFCE40] rounded-2xl'>
-            <p className='text-black text-[8px]'>Pro</p>
-
+          
+          {/* Pro Badge */}
+          <div className='flex justify-center items-center px-2 py-1 md:px-[5px] bg-[#FFCE40] rounded-2xl'>
+            <p className='text-black text-xs md:text-[8px] leading-none'>Pro</p>
           </div>
         </div>
       </div>

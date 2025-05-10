@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const IssuersWrapper = () => {
   return (
-    <div className="px-3 relative ">
+    <div className="p-3 relative ">
       {/* Image positioned at center-left */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
         <div className="relative w-full h-full">
@@ -28,19 +28,19 @@ const IssuersWrapper = () => {
       </div>
       {/* Content */}
       <p className="text-[20px] font-medium text-white mb-4 md:mb-6 relative z-10">Spotlight</p>
-      <div className='flex flex-col lg:flex-row gap-4 relative z-10'>
+      <div className='flex flex-col lg:flex-row gap-[22px] relative z-10'>
         {/* First Column */}
-        <div className='lg:flex-1 w-full lg:w-[31%]'>
+        <div className='lg:flex-1 w-full '>
           <IssuerWrapper />
         </div>
 
         {/* Second Column */}
-        <div className='lg:flex-[1.3] w-full lg:w-[38%]'>
+        <div className='lg:flex-[1.3] w-full '>
           <IssuanceWrapper />
         </div>
 
         {/* Third Column */}
-        <div className='lg:flex-1 w-full lg:w-[31%]'>
+        <div className='lg:flex-1 w-full '>
           <RecentIssuerWrapper />
         </div>
       </div>

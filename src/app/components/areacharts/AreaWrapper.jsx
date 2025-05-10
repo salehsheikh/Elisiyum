@@ -14,8 +14,8 @@ const categories = [
 
 const AreaWrapper = () => {
   return (
-    <div className="  flex items-start justify-start py-10 px-4 ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+    <div className=" w-[100%] flex items-start justify-start py-10 px-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-[100%]">
        
 
         <ChartCard
@@ -27,13 +27,14 @@ const AreaWrapper = () => {
           bg="#071E34"
           shadowColor="shadow-yellow-400/10"
           iconBg="bg-yellow-500 text-black"
-          price="$1.102"
+          price="£1.102"
           change="+9.3%"
           series={[{ name: "Revenue", data: [28, 34, 30, 40, 38, 45, 50] }]}
           categories={categories}
         />
  <ChartCard
           pair="GBP/CHF"
+          price="£1.102"
           iconText="£"
           iconBg="bg-[#FFB922]"
           strokeColor="#00B3FF"

@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/* globals.css */
+::-webkit-scrollbar {
+  width: 4px;
+
+}
+
+
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #989898;
+  border-radius: 2.5px;
+  max-height: 40px; 
+}
 
 
 @theme inline {

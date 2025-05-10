@@ -82,9 +82,7 @@ const RecentIssuerWrapper=()=>{
         }
     ];
     return(
-        <div className="bg-[#1D212780]/50  overflow-y-hidden  p-6 rounded-[35px] space-y-6 lg:max-w-sm w-full mx-auto  h-92.5 relative">
-  <p className="w-[4px] h-[112px] flex-shrink-0 rounded-[2.5px] bg-[#989898] right-0 top-1/3 absolute" />
-
+        <div className="bg-[#1D212780]/50  overflow-y-auto  p-6 rounded-[35px] space-y-6  w-full mx-auto  h-92.5 relative">
  <div className="flex justify-between items-center mb-3  pb-3">
         <h3 className="text-white text-lg font-bold">Recent Issuer</h3>
         <button className="text-[#FFCE40] text-xs underline cursor-pointer">See more</button>
