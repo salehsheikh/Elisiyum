@@ -1,16 +1,31 @@
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 
 const Navbar = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
-  return (
-    <nav className="w-full border-x border-[#006EFF] mt-5 mx-auto max-w-[997px] h-[58px] relative rounded-[24px] 
-      bg-[url('/assets/images/nav.svg')] bg-no-repeat bg-[center_top] backdrop-blur-[32px] overflow-hidden">
+  const path = usePathname();
 
-<div className="flex items-center justify-between h-full px-4 md:px-6">
+  const routeTitles = {
+    '/': 'Investor Dashboard',
+    '/market': 'Market',
+    '/watchlist': 'Watchlist',
+    '/portfolio': 'Portfolio',
+    '/exchange': 'Exchange',
+  };
+
+  // Extract base path like "/market" from full path like "/market/stats"
+  const basePath = path === '/' ? '/' : `/${path.split('/')[1]}`;
+  const pageTitle = routeTitles[basePath] || 'Investor Dashboard';
+
+  return (
+    <nav className="w-full mt-5 mx-auto max-w-[997px] h-[58px] relative rounded-[24px] 
+      bg-[url('/assets/images/nav.svg')] bg-no-repeat bg-[center_top] overflow-hidden">
+
+      <div className="flex items-center justify-between h-full px-4 md:px-6">
         {/* Left Section - Title - Hidden on mobile when search is open */}
         <h1 className={`text-white text-lg md:text-xl font-semibold truncate ${isSearchVisible ? 'hidden md:block' : 'block'}`}>
-          Investor Dashboard
+          {pageTitle}
         </h1>
 
         {/* Mobile Search Input - Visible only when toggled */}
@@ -131,10 +146,10 @@ const Navbar = () => {
               Elysium Motor
             </span>
           </div>
-          
+
           {/* Pro Badge */}
-          <div className='flex justify-center items-center px-2 py-1 md:px-[5px] bg-[#FFCE40] rounded-2xl'>
-            <p className='text-black text-xs md:text-[8px] leading-none'>Pro</p>
+          <div className="flex justify-center items-center px-2 py-1 md:px-[5px] bg-[#FFCE40] rounded-2xl">
+            <p className="text-black text-xs md:text-[8px] leading-none">Pro</p>
           </div>
         </div>
       </div>

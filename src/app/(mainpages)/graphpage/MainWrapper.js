@@ -7,8 +7,8 @@ import darkBlueBg from "../../../../public/assets/images/bgBlue.png";
 const MainWrapper = () => {
   return (
     <div
-      style={{ backgroundImage: `url(${darkBlueBg.src})` }}
-      className=" bg-no-repeat bg-contain bg-top  mx-auto 2xl:mx-28 overflow-hidden "
+      // style={{ backgroundImage: `url(${darkBlueBg.src})` }}
+      className=" overflow-x-auto    mx-auto 2xl:mx-28 "
     >
       <AreaWrapper />
       <DateTimeWrapper />

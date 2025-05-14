@@ -1,13 +1,13 @@
 export  function TopIssuance({title,issuer,date,amount}) {
     return (
-      <div className="w-full">
+      <div className="w-full ">
         <div className="bg-[#45454580]/50 rounded-xl p-5 flex justify-between items-center">
           <div className="flex-1">
-            <h3 className="text-xs font-semibold text-white mb-3">
+            <h3 className="text-xs font-semibold truncate  text-white mb-3">
               {title}
             </h3>
-            <div className="flex flex-col gap-2 text-xs font-medium">
-              <p className="text-gray-600">{issuer}</p>
+            <div className="flex flex-col  gap-2 text-xs font-medium">
+              <p className="text-gray-600 ">{issuer}</p>
               <p className="text-gray-600">{date}</p>
             </div>
           </div>

@@ -8,9 +8,9 @@ export default function MainLayoutClient({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-      <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'xl:ml-[288px]' : 'ml-0'}`}>
+      <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? '2xl:ml-[288px]' : 'ml-0'}`}>
         <Navbar />
         <main className="flex-1 overflow-auto">{children}</main>
       </div>
