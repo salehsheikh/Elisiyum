@@ -163,7 +163,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             <div className="space-y-4">
               {myElysiumItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-8 pl-5">
-                  <Image src={item.icon} alt={item.text} width={24} height={24} />
+                  <Image src={item.icon} alt={item.text} width={20} height={20} />
                   <span className="text-[16px] text-[#CED2DA]">{item.text}</span>
                 </div>
               ))}
@@ -174,7 +174,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             <div className="space-y-4">
               {otherItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-8 pl-5">
-                  <Image src={item.icon} alt={item.text} width={24} height={24} />
+                  <Image src={item.icon} alt={item.text} width={20} height={20} />
                   <span className="text-[16px] text-[#CED2DA]">{item.text}</span>
                 </div>
               ))}

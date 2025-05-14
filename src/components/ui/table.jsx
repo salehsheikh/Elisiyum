@@ -62,7 +62,7 @@ function TableRow({
     <tr
       data-slot="table-row"
       className={cn(
-        " data-[state=selected]:bg-muted border-b ",
+        " data-[state=selected]:bg-muted border-b h-13.5",
         className
       )}
       {...props} />
