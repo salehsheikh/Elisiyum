@@ -139,7 +139,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   src={item.icon}
   alt={item.text}
   width={item?.iconSize?.width || 24}
-  height={item?.iconSize?.height || 2}
+  height={item?.iconSize?.height || 20}
   className={`object-contain ${isActive ? "brightness-0 invert" : ""} ${
     item.text === 'Dashboard' ? 'w-[20px] h-[20px]' : 'w-[19px] h-5'
   }`}
@@ -163,7 +163,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             <div className="space-y-4">
               {myElysiumItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-8 pl-5">
-                  <Image src={item.icon} alt={item.text} width={20} height={20} />
+                  <Image src={item.icon} alt={item.text} width={20} height={19} />
                   <span className="text-[16px] text-[#CED2DA]">{item.text}</span>
                 </div>
               ))}
@@ -174,7 +174,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             <div className="space-y-4">
               {otherItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-8 pl-5">
-                  <Image src={item.icon} alt={item.text} width={20} height={20} />
+                  <Image src={item.icon} alt={item.text} width={20} height={19} />
                   <span className="text-[16px] text-[#CED2DA]">{item.text}</span>
                 </div>
               ))}
