@@ -14,7 +14,7 @@ const categories = [
 
 const AreaWrapper = () => {
   return (
-    <div className=" w-[100%] flex items-start justify-start py-10 px-4 ">
+    <div className=" w-full flex items-start justify-start py-10 px-auto  ">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-[100%]">
        
 

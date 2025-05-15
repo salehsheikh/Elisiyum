@@ -8,7 +8,7 @@ const MainWrapper = () => {
   return (
     <div
       // style={{ backgroundImage: `url(${darkBlueBg.src})` }}
-      className=" overflow-x-auto    mx-auto  "
+      className= "w-full max-w-full overflow-x-hidden "
     >
       <AreaWrapper />
       <DateTimeWrapper />

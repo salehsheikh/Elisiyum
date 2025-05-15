@@ -3,7 +3,7 @@ export  function TopIssuance({title,issuer,date,amount}) {
       <div className="w-full ">
         <div className="bg-[#45454580]/50 rounded-xl p-5 flex justify-between items-center">
           <div className="flex-1">
-            <h3 className="text-xs font-semibold truncate  text-white mb-3">
+            <h3 className="text-xs font-semibold sm:truncate  text-white mb-3">
               {title}
             </h3>
             <div className="flex flex-col  gap-2 text-xs font-medium">
@@ -75,7 +75,7 @@ export  function TopIssuance({title,issuer,date,amount}) {
 
     ];
     return (
-        <div className="max-w-4xl w-full mx-auto overflow-y-auto p-5.5  h-92.5  rounded-[37px]  bg-[#1D212780]/50 backdrop-blur-[32px]">
+        <div className=" w-full mx-auto overflow-y-auto p-5.5  h-92.5  rounded-[37px]  bg-[#1D212780]/50 backdrop-blur-[32px]">
 
  {/* First Row - Header */}
  <div className="flex justify-between items-center mb-5">

@@ -73,7 +73,7 @@ const IncomeLineChart = () => {
     {/* Header Section */}
     <div className="flex justify-between items-start mb-6">
         <h2 className="text-white  font-bold text-lg">Overview</h2>
-        <div className="flex justify-between gap-8 mb-6 ">
+        <div className="flex justify-between sm:gap-8 mb-6 ">
         {[ 'week','today', 'year'].map((tab) => (
           <button
             key={tab}
