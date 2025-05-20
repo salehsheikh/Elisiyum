@@ -6,19 +6,19 @@ import Image from 'next/image'
 
 const IssuersWrapper = () => {
   return (
-    <div className="p-3 relative ">
+    <div className="p-4 relative ">
       {/* Image positioned at center-left */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
         <div className="relative w-full h-full">
-          <Image 
-            src="/assets/images/ellipse.svg" 
+          <Image
+            src="/assets/images/ellipse.svg"
             alt="Background"
             width={30}
             height={30}
             className="w-full h-full object-contain"
           />
-          <Image 
-            src="/assets/images/arrowblack.svg" 
+          <Image
+            src="/assets/images/arrowblack.svg"
             alt="Arrow"
             width={12}
             height={12}

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/table"
 import Image from "next/image"
 
-export function DataTable({ columns, data }) {
+export function DataTable({ columns, data, disableSortIcon = false, headerTextWhite = false }) {
   const table = useReactTable({
     data,
     columns,
@@ -26,19 +26,25 @@ export function DataTable({ columns, data }) {
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <TableHead key={header.id}>
-                  <div className="flex items-center gap-2 text-[#FFCE40]">
+                  <div className={`flex items-center gap-2 ${headerTextWhite ? "text-white" : "text-[#FFCE40]"
+                    }`}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(header.column.columnDef.header, header.getContext())}
-                    <button onClick={() => header.column.toggleSorting()} className="p-1">
-                      <Image
-                        src="/assets/icons/sort.svg"
-                        width={10}
-                        height={14}
-                        alt="Sort"
-                        className="min-w-[10px]"
-                      />
-                    </button>
+                    {!disableSortIcon && (
+                      <button
+                        onClick={() => header.column.toggleSorting()}
+                        className="p-1"
+                      >
+                        <Image
+                          src="/assets/icons/sort.svg"
+                          width={10}
+                          height={14}
+                          alt="Sort"
+                          className="min-w-[10px]"
+                        />
+                      </button>
+                    )}
                   </div>
                 </TableHead>
               ))}

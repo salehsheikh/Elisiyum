@@ -14,9 +14,9 @@ const categories = [
 
 const AreaWrapper = () => {
   return (
-    <div className=" w-full flex items-start justify-start py-10 px-auto  ">
+    <div className=" w-full flex items-start justify-start py-10 px-4  ">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-[100%]">
-       
+
 
         <ChartCard
           pair="Total Balance"
@@ -32,7 +32,7 @@ const AreaWrapper = () => {
           series={[{ name: "Revenue", data: [28, 34, 30, 40, 38, 45, 50] }]}
           categories={categories}
         />
- <ChartCard
+        <ChartCard
           pair="GBP/CHF"
           price="£1.102"
           iconText="£"
@@ -48,7 +48,7 @@ const AreaWrapper = () => {
         />
         {/* Copy more cards with different data */}
         <ChartCard
-        arrow=" ↓"
+          arrow=" ↓"
           pair="USD/CHF"
           iconText="$"
           strokeColor="#959096"
@@ -68,26 +68,26 @@ const AreaWrapper = () => {
           categories={categories}
         />
 
-<ChartCard
-  pair="AUD/CAD"
-   arrow=" ↓"
-  iconText="€"
-  strokeColor="#959096"
-  gradientFrom="#FFFFFF"
-  gradientTo="rgba(255, 255, 255, 0.6)" // 60% opacity
-  borderColor="#959096"
-  bg="#000D1F"
-  shadowColor="shadow-gray-400/10"
-  iconBg="bg-[#1AAAF1] "
-  toggleBg="bg-[#FFCCD5]"
-  changeIconText="text-white"
+        <ChartCard
+          pair="AUD/CAD"
+          arrow=" ↓"
+          iconText="€"
+          strokeColor="#959096"
+          gradientFrom="#FFFFFF"
+          gradientTo="rgba(255, 255, 255, 0.6)" // 60% opacity
+          borderColor="#959096"
+          bg="#000D1F"
+          shadowColor="shadow-gray-400/10"
+          iconBg="bg-[#1AAAF1] "
+          toggleBg="bg-[#FFCCD5]"
+          changeIconText="text-white"
           changeBg="bg-[#FF0000]"
           changeText="text-[#FF0000]"
-  price="€0.921"
-  change="+6.1%"
-  series={[{ name: "Revenue", data: [19, 24, 22, 26, 24, 29, 32] }]}
-  categories={categories}
-/>
+          price="€0.921"
+          change="+6.1%"
+          series={[{ name: "Revenue", data: [19, 24, 22, 26, 24, 29, 32] }]}
+          categories={categories}
+        />
 
       </div>
     </div>

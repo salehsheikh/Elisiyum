@@ -22,7 +22,7 @@ const ChartCard = ({
 }) => {
   return (
     <div className="text-white w-full ">
-      <div className={`rounded-[20px] border-[1.97px] relative shadow-xl overflow-hidden mx-2`} style={{ backgroundColor: bg, borderColor }}>
+      <div className={`rounded-[20px] border-[1.97px] relative shadow-xl overflow-hidden`} style={{ backgroundColor: bg, borderColor }}>
         <div className={`shadow-xl ${shadowColor}`}>
           <div className="flex items-center justify-between px-3 pt-3">
             <div className="flex items-center gap-2">
