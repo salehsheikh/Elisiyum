@@ -57,12 +57,14 @@ const data = [
 
 export function SecondTable() {
     return (
-        <div className="w-full mx-auto py-10 overflow-x-auto">
+        <div className="w-full mx-auto py-2 overflow-x-auto">
             <DataTable
                 columns={columns}
                 data={data}
                 disableSortIcon={true}
                 headerTextWhite={true}
+                withGradientBorder={true}
+                minWidth={true}
             />
         </div>
     )

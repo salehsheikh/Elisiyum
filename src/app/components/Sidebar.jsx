@@ -14,9 +14,9 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   ];
 
   const myElysiumItems = [
-    { icon: '/assets/icons/portfolio.svg', text: 'Portfolio' },
+    { icon: '/assets/icons/portfolio.svg', text: 'Portfolio', path: '/portfolio' },
     { icon: '/assets/icons/profile.svg', text: 'Profile' },
-    { icon: '/assets/icons/ecosystem.svg', text: 'Ecosystem' },
+    { icon: '/assets/icons/ecosystem.svg', text: 'Ecosystem', path: '/ecosystem' },
   ];
 
   const otherItems = [
@@ -36,19 +36,19 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         className={`fixed z-50 ${isOpen ? 'left-[262px]' : 'left-0'} top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out cursor-pointer`}
       >
         <div className="w-[22px] h-[46px] relative">
-          <Image 
-            src="/assets/images/leftplay.svg" 
-            alt="" 
-            width={22} 
-            height={46} 
-            className={`w-full h-full object-cover transition-transform ${!isOpen ? 'rotate-180' : ''}`} 
+          <Image
+            src="/assets/images/leftplay.svg"
+            alt=""
+            width={22}
+            height={46}
+            className={`w-full h-full object-cover transition-transform ${!isOpen ? 'rotate-180' : ''}`}
           />
-          <Image 
-            src="/assets/icons/arrow.svg" 
-            alt="" 
-            width={16} 
-            height={16} 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" 
+          <Image
+            src="/assets/icons/arrow.svg"
+            alt=""
+            width={16}
+            height={16}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           />
         </div>
       </button>
@@ -116,59 +116,81 @@ export default function Sidebar({ isOpen, setIsOpen }) {
           <nav className="flex-1 px-[42px] -mt-10">
             <h2 className="text-sm mb-6 text-[#919191]">Main Menu</h2>
 
-        <div className="space-y-4">
-  {mainMenuItems.map((item, index) => {
-    const isActive = pathname === item.path;
+            <div className="space-y-4">
+              {mainMenuItems.map((item, index) => {
+                const isActive = pathname === item.path;
 
-    return (
-      <div
-        key={index}
-        onClick={() => router.push(item.path)}
-        className={`cursor-pointer h-[50px] px-4 flex items-center mb-2 rounded-[15px] transition-all duration-200 ${
-          isActive
-            ? "bg-no-repeat bg-cover bg-center border-[1.5px] border-[#666] pl-5 gap-x-8 justify-start"
-            : "pl-5 gap-x-8 justify-start"
-        }`}
-        style={
-          isActive
-            ? { backgroundImage: "url('/assets/images/starsgrd.png')" }
-            : {}
-        }
-      >
-       <Image
-  src={item.icon}
-  alt={item.text}
-  width={item?.iconSize?.width || 24}
-  height={item?.iconSize?.height || 20}
-  className={`object-contain ${isActive ? "brightness-0 invert" : ""} ${
-    item.text === 'Dashboard' ? 'w-[20px] h-[20px]' : 'w-[19px] h-5'
-  }`}
-/>
-        <span
-          className={`text-[16px] ${
-            isActive ? "text-white font-medium" : "text-[#CED2DA]"
-          }`}
-        >
-          {item.text}
-        </span>
-      </div>
-    );
-  })}
-</div>
+                return (
+                  <div
+                    key={index}
+                    onClick={() => router.push(item.path)}
+                    className={`cursor-pointer h-[50px] px-4 flex items-center mb-2 rounded-[15px] transition-all duration-200 ${isActive
+                      ? "bg-no-repeat bg-cover bg-center border-[1.5px] border-[#666] pl-5 gap-x-8 justify-start"
+                      : "pl-5 gap-x-8 justify-start"
+                      }`}
+                    style={
+                      isActive
+                        ? { backgroundImage: "url('/assets/images/starsgrd.png')" }
+                        : {}
+                    }
+                  >
+                    <Image
+                      src={item.icon}
+                      alt={item.text}
+                      width={item?.iconSize?.width || 24}
+                      height={item?.iconSize?.height || 20}
+                      className={`object-contain ${isActive ? "brightness-0 invert" : ""} ${item.text === 'Dashboard' ? 'w-[20px] h-[20px]' : 'w-[19px] h-5'
+                        }`}
+                    />
+                    <span
+                      className={`text-[16px] ${isActive ? "text-white font-medium" : "text-[#CED2DA]"
+                        }`}
+                    >
+                      {item.text}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
 
 
 
             {/* My Elysium */}
             <h3 className="text-sm mt-10 mb-6 text-[#919191]">My Elysium</h3>
             <div className="space-y-4">
-              {myElysiumItems.map((item, index) => (
-                <div key={index} className="flex items-center gap-8 pl-5">
-                  <Image src={item.icon} alt={item.text} width={20} height={19} />
-                  <span className="text-[16px] text-[#CED2DA]">{item.text}</span>
-                </div>
-              ))}
+              {myElysiumItems.map((item, index) => {
+                const isActive = pathname === item.path;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => router.push(item.path)}
+                    className={`cursor-pointer h-[50px] px-4 flex items-center mb-2 rounded-[15px] transition-all duration-200 ${isActive
+                      ? "bg-no-repeat bg-cover bg-center border-[1.5px] border-[#666] pl-5 gap-x-8 justify-start"
+                      : "pl-5 gap-x-8 justify-start"
+                      }`}
+                    style={
+                      isActive
+                        ? { backgroundImage: "url('/assets/images/starsgrd.png')" }
+                        : {}
+                    }
+                  >
+                    <Image
+                      src={item.icon}
+                      alt={item.text}
+                      width={item?.iconSize?.width || 24}
+                      height={item?.iconSize?.height || 20}
+                      className={`object-contain w-[19px] h-5 ${isActive ? "brightness-0 invert" : ""} `}
+                    />
+                    <span
+                      className={`text-[16px] ${isActive ? "text-white font-medium" : "text-[#CED2DA]"
+                        }`}
+                    >
+                      {item.text}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
-
             {/* Others */}
             <h3 className="text-sm mt-10 mb-6 text-[#919191]">Others</h3>
             <div className="space-y-4">
@@ -182,12 +204,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
           </nav>
 
           {/* Footer */}
-          <div className="text-sm text-[#959393] font-bold mx-[43px] mt-10">
+          <div className="text-sm text-[#959393] font-bold mx-[43px] mt-10 pb-14">
             Elysium Finance<br />
             © All rights reserved
           </div>
-        </div>
-      </aside>
+        </div >
+      </aside >
     </>
   );
 }

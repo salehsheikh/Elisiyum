@@ -61,12 +61,14 @@ const data = [
 
 export function WatchListTable() {
     return (
-        <div className="w-full mx-auto py-10 overflow-x-auto">
+        <div className="w-full mx-auto py-3 overflow-x-auto">
             <DataTable
                 columns={columns}
                 data={data}
                 disableSortIcon={true}
                 headerTextWhite={true}
+                withGradientBorder={true}
+                minWidth={true}
                 onRowSelectionChange={() => { }}
             />
         </div>
