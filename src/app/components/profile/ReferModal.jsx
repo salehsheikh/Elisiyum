@@ -5,7 +5,7 @@ import Image from "next/image";
 const ReferModal = ({ onClose }) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95">
-            <div className="bg-[#1D2127B2] rounded-[19px] shadow-lg max-w-md lg:max-w-[617px] w-full p-8 lg:p-26 relative">
+            <div className="bg-[#1D2127B2] rounded-[19px]  max-h-[90vh]  shadow-lg max-w-md lg:max-w-[617px] w-full p-8 xl:p-10 2xl:p-26 relative">
 
                 {/* Close icon in black circle - top-left */}
                 <button
