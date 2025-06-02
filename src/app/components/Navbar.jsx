@@ -11,7 +11,11 @@ const Navbar = () => {
     '/market': 'Market',
     '/watchlist': 'Watchlist',
     '/portfolio': 'Portfolio',
+    '/profile': 'Profile',
+    '/ecosystem': 'Ecosystem',
     '/exchange': 'Exchange',
+    '/settings': 'Settings',
+    '/support': 'Support'
   };
 
   // Extract base path like "/market" from full path like "/market/stats"
@@ -39,7 +43,7 @@ const Navbar = () => {
                 text-white placeholder-white text-[10px] focus:outline-none 
                 focus:ring-2 focus:ring-blue-500 backdrop-blur-sm"
               />
-              <button 
+              <button
                 className="absolute right-3 top-0 w-4 h-4 text-white"
                 onClick={() => setIsSearchVisible(false)}
               >
@@ -65,7 +69,7 @@ const Navbar = () => {
         {/* Right Section - Icons & Profile */}
         <div className={`flex items-center gap-3 md:gap-6 ${isSearchVisible ? 'hidden md:flex' : 'flex'}`}>
           {/* Mobile Search Icon */}
-          <button 
+          <button
             className="md:hidden p-2 text-white"
             onClick={() => setIsSearchVisible(true)}
           >
@@ -135,8 +139,8 @@ const Navbar = () => {
 
           {/* Profile Section */}
           <div className="flex items-center gap-2 md:gap-3">
-            <Image 
-              src="/assets/images/avatar.svg" 
+            <Image
+              src="/assets/images/avatar.svg"
               alt="User avatar"
               width={25}
               height={25}

@@ -60,8 +60,8 @@ const RadarChart = ({
 
     return (
         <div
-            className="relative"
-            style={{ width: `${width}px`, height: `${height}px` }}
+            className="relative  overflow-hidden"
+            style={{ width: `${width}px`, height: `${height}px ` }}
         >
             {typeof window !== "undefined" && options && (
                 <Chart

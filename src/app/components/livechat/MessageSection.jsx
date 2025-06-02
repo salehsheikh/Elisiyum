@@ -4,7 +4,7 @@ import React from 'react'
 const MessageSection = () => {
     return (
         <div
-            className="relative rounded-[20px]  backdrop-blur-[62px] h-14 flex items-center px-5 w-full bottom-3"
+            className="relative rounded-[20px]  backdrop-blur-[62px] h-14 flex items-center px-5 w-full "
             style={{
                 background: `
                     linear-gradient(#1D2127B2, #1D2127B2) padding-box,

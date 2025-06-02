@@ -1,8 +1,11 @@
+"use client"
 import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import ReferModal from './ReferModal'
 
 const MissionTasks = () => {
+    const [open, setOpen] = useState(false);
     return (
         <div className="relative p-px  rounded-[20px] bg-gradient-to-b from-[#69778D] to-[#1D2127] h-96 ">
             <div className='h-96 px-5 py-2.5 bg-[#1D2127B2] backdrop-blur-[32px] rounded-[20px] overflow-y-auto'>
@@ -41,7 +44,10 @@ const MissionTasks = () => {
                     </div>
                     <div className='text-lg flex gap-1 justify-end font-medium'>
                         <p className='text-[#FFCE40]'>3 <span className='text-white'>/3</span></p>
-                        <button className='w-[123px] h-[33px] bg-[#006EFF] rounded-[500px] text-white'>Go To</button>
+                        <button className='w-[123px] cursor-pointer h-[33px] bg-[#006EFF] rounded-[500px] text-white'
+                            onClick={() => setOpen(true)}
+                        >Go To</button>
+
                     </div>
                 </div>
 
@@ -53,7 +59,9 @@ const MissionTasks = () => {
                     </div>
                     <div className='text-lg flex gap-1 justify-end font-medium '>
                         <p className='text-[#FFCE40]'>$10,000 <span className='text-white'>/$10,000</span></p>
-                        <button className='w-[123px] h-[33px] bg-[#006EFF] rounded-[500px] text-white'>Go To</button>
+                        <button
+                            onClick={() => setOpen(true)}
+                            className='w-[123px] cursor-pointer h-[33px] bg-[#006EFF] rounded-[500px] text-white'>Go To</button>
                     </div>
                 </div>
                 <div className='flex justify-between border-b-1 border-[#717579] py-4'>
@@ -64,7 +72,9 @@ const MissionTasks = () => {
                     </div>
                     <div className='text-lg flex gap-1 justify-end font-medium'>
                         <p className='text-[#A9A9A9]'>Incomplete</p>
-                        <button className='w-[123px] h-[33px] bg-[#006EFF] rounded-[500px] text-white'>Go To</button>
+                        <button
+                            onClick={() => setOpen(true)}
+                            className='w-[123px] cursor-pointer h-[33px] bg-[#006EFF] rounded-[500px] text-white'>Go To</button>
                     </div>
                 </div>
                 <div className='flex justify-between border-b-1 border-[#717579] py-4'>
@@ -75,14 +85,17 @@ const MissionTasks = () => {
                     </div>
                     <div className='text-lg flex gap-1 justify-end font-medium'>
                         <p className='text-white'>$5,00 <span className='text-[#A9A9A9]'>/$2,000</span></p>
-                        <button className='w-[123px] h-[33px] bg-[#006EFF] rounded-[500px] text-white'>Go To</button>
+                        <button
+                            onClick={() => setOpen(true)}
+                            className='w-[123px] cursor-pointer h-[33px] bg-[#006EFF] rounded-[500px] text-white'>Go To</button>
                     </div>
                 </div>
 
 
 
-
             </div>
+            {open && <ReferModal onClose={() => setOpen(false)} />}
+
         </div>
     )
 }

@@ -2,12 +2,15 @@
 
 import { useState, useRef, useEffect } from 'react';
 
-export const DropDown = ({ 
-  label, 
-  children, 
-  className, 
+export const DropDown = ({
+  label,
+  children,
+  className,
   options = [],
-  onSelect 
+  onSelect,
+  useMinHeight = true,
+  textSize = true,
+  setPosition = true
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -26,7 +29,7 @@ export const DropDown = ({
   }, []);
 
   return (
-    <div 
+    <div
       ref={dropdownRef}
       className={`relative ${className}`}
     >
@@ -35,14 +38,14 @@ export const DropDown = ({
         tabIndex={0}
         onClick={toggleDropdown}
         onKeyDown={(e) => e.key === 'Enter' && toggleDropdown()}
-        className={`bg-[#FFFFFF33] rounded-[10px] min-h-[60px]  min-w-44.5 w-full px-4 inline-flex items-center justify-between gap-4 cursor-pointer transition-all ${
-          isOpen ? 'rounded-b-none' : ''
-        }`}
+        className={`bg-white/20 backdrop-blur-sm rounded-[10px] ${useMinHeight ? "min-h-[60px]" : "h-11"
+          } min-w-44.5 w-full px-4 inline-flex items-center justify-between gap-4 cursor-pointer transition-all ${isOpen ? "rounded-b-none" : ""
+          }`}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
         <div className="flex flex-col justify-center">
-          <span className="block text-white text-[16px] font-semibold whitespace-nowrap">
+          <span className={`block text-white   font-semibold whitespace-nowrap ${textSize ? "text-[16px]" : "text-sm font-medium"}`}>
             {children}
           </span>
           {label && (
@@ -59,9 +62,8 @@ export const DropDown = ({
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            className={`text-white/80 transition-transform ${
-              isOpen ? 'rotate-180' : ''
-            }`}
+            className={`text-white/80 transition-transform ${isOpen ? 'rotate-180' : ''
+              }`}
           >
             <path d="M6 9l6 6 6-6" />
           </svg>
@@ -70,7 +72,7 @@ export const DropDown = ({
 
       {isOpen && (
         <ul
-          className="absolute w-full bg-[#2D2F36] rounded-b-[10px] shadow-lg z-50 mt-[-2px] "
+          className={` w-full  bg-[#2D2F36] rounded-b-[10px] shadow-lg z-50 mt-[-2px] ${setPosition ? "absolute" : "relative"}`}
           role="listbox"
         >
           {options.map((option, index) => (

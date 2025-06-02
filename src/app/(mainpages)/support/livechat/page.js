@@ -11,9 +11,9 @@ const Page = () => {
         router.push('/support');
     }
     return (
-        <div className="sm:p-12 p-3 h-[94vh]">
+        <div className="sm:p-12 p-3 h-auto">
             <div
-                className="rounded-[20px] backdrop-blur-[62px] w-full h-full"
+                className="rounded-[20px] backdrop-blur-[62px] w-full "
                 style={{
                     background: `
                         linear-gradient(#1D2127, #1D2127) padding-box,

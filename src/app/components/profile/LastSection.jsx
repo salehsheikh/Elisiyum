@@ -29,7 +29,7 @@ const LastSection = () => {
                     </div>
 
                 </div>
-                <div className='flex flex-col md:justify-between !justify-center !items-center md:flex-row !py-4 space-y-8 space-x-8'>
+                <div className='flex flex-col md:justify-between !justify-center !items-center md:flex-row !py-4 space-y-8 lg:space-x-8 !overflow-hidden'>
                     <div>
                         <RadarChart
                             series={[{ name: 'Assets', data: [75, 45, 85, 60, 55, 70] }]}

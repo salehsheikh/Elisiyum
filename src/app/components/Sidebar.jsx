@@ -15,13 +15,13 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   const myElysiumItems = [
     { icon: '/assets/icons/portfolio.svg', text: 'Portfolio', path: '/portfolio' },
-    { icon: '/assets/icons/profile.svg', text: 'Profile' },
+    { icon: '/assets/icons/profile.svg', text: 'Profile', path: '/profile' },
     { icon: '/assets/icons/ecosystem.svg', text: 'Ecosystem', path: '/ecosystem' },
   ];
 
   const otherItems = [
-    { icon: '/assets/icons/setting.svg', text: 'Settings' },
-    { icon: '/assets/icons/support.svg', text: 'Support' },
+    { icon: '/assets/icons/setting.svg', text: 'Settings', path: '/settings' },
+    { icon: '/assets/icons/support.svg', text: 'Support', path: '/support' },
   ];
 
   const toggleSidebar = () => {
@@ -194,12 +194,38 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             {/* Others */}
             <h3 className="text-sm mt-10 mb-6 text-[#919191]">Others</h3>
             <div className="space-y-4">
-              {otherItems.map((item, index) => (
-                <div key={index} className="flex items-center gap-8 pl-5">
-                  <Image src={item.icon} alt={item.text} width={20} height={19} />
-                  <span className="text-[16px] text-[#CED2DA]">{item.text}</span>
-                </div>
-              ))}
+              {otherItems.map((item, index) => {
+                const isActive = pathname === item.path;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => router.push(item.path)}
+                    className={`cursor-pointer h-[50px] px-4 flex items-center mb-2 rounded-[15px] transition-all duration-200 ${isActive
+                      ? "bg-no-repeat bg-cover bg-center border-[1.5px] border-[#666] pl-5 gap-x-8 justify-start"
+                      : "pl-5 gap-x-8 justify-start"
+                      }`}
+                    style={
+                      isActive
+                        ? { backgroundImage: "url('/assets/images/starsgrd.png')" }
+                        : {}
+                    }
+                  >
+                    <Image
+                      src={item.icon}
+                      alt={item.text}
+                      width={item?.iconSize?.width || 24}
+                      height={item?.iconSize?.height || 20}
+                      className={`object-contain w-[19px] h-5 ${isActive ? "brightness-0 invert" : ""} `}
+                    />
+                    <span
+                      className={`text-[16px] ${isActive ? "text-white font-medium" : "text-[#CED2DA]"
+                        }`}
+                    >
+                      {item.text}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </nav>
 
