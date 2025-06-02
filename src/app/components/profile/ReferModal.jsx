@@ -5,7 +5,7 @@ import Image from "next/image";
 const ReferModal = ({ onClose }) => {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95">
-            <div className="bg-[#1D2127B2] rounded-[19px] shadow-lg max-w-[617px] w-full p-6 relative">
+            <div className="bg-[#1D2127B2] rounded-[19px] shadow-lg max-w-md lg:max-w-[617px] w-full p-8 lg:p-26 relative">
 
                 {/* Close icon in black circle - top-left */}
                 <button
@@ -17,7 +17,7 @@ const ReferModal = ({ onClose }) => {
 
                 {/* Title centered at top */}
                 <h2 className="text-4xl  text-white text-center mb-8 mt-6 ">
-                    <span className="text-[#FFCE40]">Refer</span> your Friends and <span className="text-[#FFCE40]" >Earn</span>
+                    <span className="text-[#FFCE40]">Refer</span> your Friends <br /> and <span className="text-[#FFCE40]" >Earn</span>
                 </h2>
 
                 {/* Image row */}
@@ -32,8 +32,8 @@ const ReferModal = ({ onClose }) => {
                 </div>
 
                 {/* Dotted border box with text + code */}
-                <div className="border border-dashed border-[#FFFFFF4D] bg-[#FFFFFF1A] p-6 rounded-[10px] text-center space-y-2">
-                    <div className="flex-col gap-2.5">
+                <div className="border border-dashed border-[#FFFFFF4D] bg-[#FFFFFF1A] p-6 rounded-[10px] sm:text-center space-y-2">
+                    <div className="flex-col gap-2.5 ">
                         <p className="text-sm text-white">Your referral code</p>
                         <p className="text-[#FFCE40] text-lg font-semibold  "> ABHS4587</p>
                     </div>
